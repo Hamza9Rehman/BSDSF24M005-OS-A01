@@ -37,3 +37,24 @@ The ar command combines multiple .o files into a static library. Ranlib creates 
 When you run nm on your client_static executable, are the symbols for functions like mystrlen present? What does this tell you about how static linking works?
 
 Symbols are present with a T code, indicating that the machine code for functions was copied directly into the executable.
+
+
+Feature 4
+
+
+What is Position-Independent Code (-fPIC) and why is it a fundamental requirement for creating shared libraries?
+
+-fPIC tells the compiler to generate machine code that is relatively addressed rather than absolutely addressed. 
+It is necessary as .so file contents are only copied to code section once, and every process that uses .so file then copies these contents to whichever part of its virtual address space is free, so absolute addressing wouldnt work for these copies.
+
+
+Explain the difference in file size between your static and dynamic clients. Why does this difference exist?
+
+Dynamic client does not have copy of code from .so file like static client has from .a, it only has import stub entries in the Procedure Linking Table. Library functions are linked at runtime rather than being copied, so they consume less space in the binary file.
+
+
+What is the LD_LIBRARY_PATH environment variable? Why was it necessary to set it for your program to run, and what does this tell you about the responsibilities of the operating system's dynamic loader? 
+
+LD_LIBRARY_PATH is an environment variable that stores colon seperated list of directory paths which the linker should search for .so files before moving on to default directories.
+It was necessary to set so the linker could find libmyutils.so file to link with executable.
+The compiler builds binary structure, but the dynamic loader is responsible for symbol resolution and address mapping at runtime.
