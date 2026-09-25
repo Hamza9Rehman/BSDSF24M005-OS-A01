@@ -1,0 +1,25 @@
+.TH MYSTRCAT 3 "September 2026" "Version 0.3.1" "MyUtils Library Manual"
+.SH NAME
+mystrcat \- concatenate two strings
+.SH SYNOPSIS
+.B #include <mystrfunctions.h>
+.sp
+.BI "char *mystrcat(char *" dest ", const char *" src ");"
+.SH DESCRIPTION
+The
+.B mystrcat()
+function appends the
+.I src
+string to the
+.I dest
+string, overwriting the terminating null byte (\(aq\0\(aq) at the end of
+.I dest
+, and then adds a terminating null byte. The strings may not overlap, and the
+.I dest
+string must have enough space for the result.
+.SH RETURN VALUE
+Returns a pointer to the resulting string
+.I dest
+.
+.SH AUTHOR
+Hamza Rehman <bsdsf24m005@pucit.edu.pk>

@@ -1,0 +1,19 @@
+.TH MYGREP 3 "September 2026" "Version 0.3.1" "MyUtils Library Manual"
+.SH NAME
+mygrep \- search a file for lines matching a pattern
+.SH SYNOPSIS
+.B #include <myfilefunctions.h>
+.sp
+.BI "int mygrep(const char *" filename ", const char *" pattern ");"
+.SH DESCRIPTION
+The
+.B mygrep()
+function searches the file specified by
+.I filename
+for lines containing the substring
+.I pattern
+and prints each matching line to standard output.
+.SH RETURN VALUE
+Returns the number of matching lines found, or -1 if the file cannot be opened.
+.SH AUTHOR
+Hamza Rehman <bsdsf24m005@pucit.edu.pk>

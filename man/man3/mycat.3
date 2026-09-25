@@ -1,0 +1,17 @@
+.TH MYCAT 3 "September 2026" "Version 0.3.1" "MyUtils Library Manual"
+.SH NAME
+mycat \- display the contents of a file to stdout
+.SH SYNOPSIS
+.B #include <myfilefunctions.h>
+.sp
+.BI "int mycat(const char *" filename ");"
+.SH DESCRIPTION
+The
+.B mycat()
+function opens the file specified by
+.I filename
+and outputs its entire content to standard output (stdout).
+.SH RETURN VALUE
+Returns 0 on success, or -1 if the file cannot be opened or read.
+.SH AUTHOR
+Hamza Rehman <bsdsf24m005@pucit.edu.pk>
